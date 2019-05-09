@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Brett Abramczyk",
   "license": "MIT",
+  "scripts": {
+    "start": "node index"
+  },
   "dependencies": {
     "koa": "^2.7.0"
   }
