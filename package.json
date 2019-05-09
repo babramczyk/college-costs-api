@@ -1,0 +1,11 @@
+{
+  "name": "advicent-coding-exercise",
+  "version": "1.0.0",
+  "description": "Simple API to retreive college cost data. Done for Advicent coding exercise",
+  "main": "index.js",
+  "author": "Brett Abramczyk",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.7.0"
+  }
+}
