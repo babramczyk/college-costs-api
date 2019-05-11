@@ -9,7 +9,7 @@ const router = new Router()
 const port = process.env.NODE_ENV === 'test' ? 3001 : 3000
 const server = app.listen(port)
 
-router.get('/education_costs', async ctx => {
+router.get('/colleges/:college_name/cost', async ctx => {
   console.log('response received')
   ctx.status = 200
 })

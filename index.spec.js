@@ -11,8 +11,8 @@ test('returns a 404 for root endpoint', async () => {
     .expect(404)
 })
 
-test('returns a 200 for "/education_costs" endpoint', async () => {
+test('returns a 200 for "/colleges/:college_name/cost" endpoint', async () => {
   await request(server)
-    .get('/education_costs')
+    .get('/colleges/fake_college/cost')
     .expect(200)
 })
