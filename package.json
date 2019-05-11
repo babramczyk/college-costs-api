@@ -6,9 +6,10 @@
   "author": "Brett Abramczyk",
   "license": "MIT",
   "scripts": {
-    "start": "node index"
+    "start": "yarn nodemon"
   },
   "dependencies": {
-    "koa": "^2.7.0"
+    "koa": "^2.7.0",
+    "nodemon": "^1.19.0"
   }
 }
