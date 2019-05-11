@@ -1,9 +1,19 @@
 const Koa = require('koa')
+const Router = require('koa-router')
 
 const app = new Koa()
+const router = new Router()
 
-app.listen(3000)
+// Use different ports for tests and actual server, so that both can function
+// simultaneously
+const port = process.env.NODE_ENV === 'test' ? 3001 : 3000
+const server = app.listen(port)
 
-app.use(ctx => {
-  console.log('request received')
+router.get('/education_costs', async ctx => {
+  console.log('response received')
+  ctx.status = 200
 })
+
+app.use(router.routes()).use(router.allowedMethods())
+
+module.exports = { server }

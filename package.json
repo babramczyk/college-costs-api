@@ -6,10 +6,16 @@
   "author": "Brett Abramczyk",
   "license": "MIT",
   "scripts": {
-    "start": "yarn nodemon"
+    "start": "yarn nodemon",
+    "test": "jest"
   },
   "dependencies": {
     "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
     "nodemon": "^1.19.0"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0",
+    "supertest": "^4.0.2"
   }
 }
