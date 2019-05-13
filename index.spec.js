@@ -23,8 +23,15 @@ test('returns a 404 for "/colleges/:college_name" endpoint', async () => {
     .expect(404)
 })
 
-test('returns a 200 for "/colleges/:college_name/cost" endpoint', async () => {
+test('returns a 400 if college_name omitted', async () => {
   await request(server)
-    .get('/colleges/fake_college/cost')
+    .get('/colleges//cost')
+    .expect(400)
+})
+
+// Return to this test later when I flesh out how I want to test this
+test.skip('returns a 200 for valid "/colleges/:college_name/cost" endpoint', async () => {
+  await request(server)
+    .get('/colleges/Adelphi%20University/cost')
     .expect(200)
 })
