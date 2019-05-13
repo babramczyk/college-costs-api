@@ -6,10 +6,12 @@
   "author": "Brett Abramczyk",
   "license": "MIT",
   "scripts": {
+    "build": "node build",
     "start": "yarn nodemon",
     "test": "jest"
   },
   "dependencies": {
+    "csv-parse": "^4.4.1",
     "koa": "^2.7.0",
     "koa-router": "^7.4.0",
     "nodemon": "^1.19.0"
