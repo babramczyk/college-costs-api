@@ -29,8 +29,9 @@ test('returns a 400 if college_name omitted', async () => {
     .expect(400)
 })
 
-test('returns a 200 for valid "/colleges/:college_name/cost" endpoint', async () => {
-  await request(server)
+test('returns the correct cose for valid "/colleges/:college_name/cost" endpoint', async () => {
+  const res = await request(server)
     .get('/colleges/Adelphi%20University/cost')
     .expect(200)
+  expect(res.body).toBe(38657)
 })
