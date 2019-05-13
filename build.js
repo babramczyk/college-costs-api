@@ -2,8 +2,9 @@ const fs = require('fs')
 const csvParse = require('csv-parse/lib/sync')
 
 console.log('~> Loading college data from CSV')
+let csvData
 try {
-  const csvData = fs.readFileSync('./data/college-costs.csv').toString()
+  csvData = fs.readFileSync('./data/college-costs.csv').toString()
 } catch (e) {
   throw Error(
     "Error parsing CSV data. Make sure './data/college-costs.csv exists",
