@@ -52,7 +52,7 @@ describe('build', () => {
 
       expect(key).toBe(name)
 
-      expect(typeof name)
+      expect(typeof name).toBe('string')
 
       expect(typeof tuitionInState).toBe('number')
       expect(isNaN(tuitionInState)).toBe(false)
