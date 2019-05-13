@@ -7,7 +7,7 @@ try {
   csvData = fs.readFileSync('./data/college-costs.csv').toString()
 } catch (e) {
   throw Error(
-    "Error parsing CSV data. Make sure './data/college-costs.csv exists",
+    "Error parsing CSV data. Make sure './data/college-costs.csv' exists",
   )
 }
 
