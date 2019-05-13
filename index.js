@@ -14,7 +14,7 @@ let colleges
 try {
   colleges = JSON.parse(fs.readFileSync('./data/college-costs.json'))
 } catch (e) {
-  console.error(
+  throw Error(
     "Error loading college data. Make sure you run 'yarn build' before starting the server",
   )
 }
@@ -23,13 +23,17 @@ router.get('/colleges//cost', ctx => {
   ctx.throw(400, 'Error: College name is required')
 })
 
-router.get('/colleges/:college_name/cost', async ctx => {
-  const { college_name: name } = ctx.params
-
-  const college = colleges[name]
+router.get('/colleges/:college_name/cost', ctx => {
+  const college = colleges[ctx.params.college_name]
   ctx.assert(college, 404, 'Error: College not found')
 
-  ctx.body = college.tuitionInState + college.tuitionOutOfState
+  let cost = college.tuitionInState + college.tuitionOutOfState
+
+  if (ctx.query.room_and_board === '1') {
+    cost += college.roomAndBoard
+  }
+
+  ctx.body = cost
 })
 
 app.use(router.routes()).use(router.allowedMethods())
