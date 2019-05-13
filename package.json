@@ -7,9 +7,11 @@
   "license": "MIT",
   "scripts": {
     "build": "node build",
-    "start": "yarn nodemon",
+    "start": "nodemon",
     "test": "jest --runInBand",
-    "test-watch": "jest --watch --runInBand"
+    "test-watch": "jest --watch --runInBand",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
   },
   "dependencies": {
     "koa": "^2.7.0",
@@ -18,7 +20,11 @@
   },
   "devDependencies": {
     "csv-parse": "^4.4.1",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "jest": "^24.8.0",
+    "prettier": "^1.17.0",
     "supertest": "^4.0.2"
   }
 }

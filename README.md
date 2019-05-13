@@ -42,6 +42,8 @@ To modify college data, use `build/college-data.csv`. Then run `yarn build` to u
 - `yarn start`: Start the app
 - `yarn test`: Runs unit and integration tests
 - `yarn test-watch`: Runs tests in Jest's watch mode
+- `yarn lint`: Lint all JS files
+- `yarn lint-fix`: Lint all JS files, autofixing where possible
 
 ## Implementation Caveats
 
