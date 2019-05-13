@@ -27,7 +27,7 @@ router.get('/colleges/:college_name/cost', ctx => {
   const college = colleges[ctx.params.college_name]
   ctx.assert(college, 404, 'Error: College not found')
 
-  let cost = college.tuitionInState + college.tuitionOutOfState
+  let cost = college.tuitionInState
 
   if (ctx.query.room_and_board === '1') {
     cost += college.roomAndBoard
